@@ -78,7 +78,7 @@ if __name__ == '__main__':
  UUID2 = oocd.read_memory(0x0800F9B4,3)
  output_value = '%08x %08x %08x\n' % (UUID2[0],UUID2[1],UUID2[2])
  sys.stdout.write(output_value)
- 
+ oocd.send('reset')
  sys.stdout.write('done\n')
  sys.stdout.flush()
  input("Press Enter to continue...")

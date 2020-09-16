@@ -74,11 +74,10 @@ if __name__ == '__main__':
  oocd.write_binary(0x08001000,'DRV140.bin')
  oocd.write_binary(0x0800f800,'data_temp.bin')
  sys.stdout.write('done\n')
-
  UUID2 = oocd.read_memory(0x0800F9B4,3)
  output_value = '%08x %08x %08x\n' % (UUID2[0],UUID2[1],UUID2[2])
  sys.stdout.write(output_value)
- 
+ oocd.send('reset')
  sys.stdout.write('done\n')
  sys.stdout.flush()
  input("Press Enter to continue...")
